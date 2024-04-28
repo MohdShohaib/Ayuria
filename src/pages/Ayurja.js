@@ -8,7 +8,7 @@ import FrameComponent7 from "../components/FrameComponent";
 
 const Ayurja = () => {
   return (
-    <div className="relative bg-white w-full flex flex-col items-start justify-start text-left text-[3rem] text-gray-200 font-poppins">
+    <div id="Home" className="relative bg-white w-full flex flex-col items-start justify-start text-left text-[3rem] text-gray-200 font-poppins">
       <div className="w-[100%] relative bg-white h-[52.5rem] overflow-hidden shrink-0">
         <div className="absolute top-[13.025rem] left-[32.313rem] w-[24.875rem] h-[20.725rem]">
           <div className="absolute top-[0rem] left-[0rem] w-[24.875rem] h-[20.725rem]">
@@ -19,10 +19,10 @@ const Ayurja = () => {
         <HomeSection />
       </div>
       <FrameComponent3 />
-      <FrameComponent1 />
+      <FrameComponent1  />
       <Slider />
       <FrameComponent />
-      <div style={{
+      <div id="About" style={{
         width:"100%"
       }} className="bg-oldlace flex flex-col items-start justify-start">
         <div

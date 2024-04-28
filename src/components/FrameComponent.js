@@ -1,6 +1,6 @@
 const FrameComponent7 = () => {
   return (
-    <div style={{
+    <div id="ContactUs" style={{
       width:"100%"
     }} className="w-[90rem] bg-white h-[29.063rem] flex flex-col items-center justify-between py-[1.25rem] px-[0rem] box-border text-center text-[0.875rem] text-gray-200 font-belleza">
       <div className="flex flex-col items-center justify-start gap-[1.875rem]">

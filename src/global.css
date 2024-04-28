@@ -16,3 +16,10 @@ body {
 ::after {
   border-width: 0;
 }
+
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+  background: black;
+padding: 3px;
+}

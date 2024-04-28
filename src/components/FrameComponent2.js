@@ -29,7 +29,7 @@ const FrameComponent1 = () => {
   ];
 
   return (
-    <div className=" bg-whitesmoke h-[85.938rem] flex flex-col items-center justify-center gap-[4.187rem] text-center text-[2.875rem] text-gray-200 font-poppins"
+    <div id="Product" className=" bg-whitesmoke h-[85.938rem] flex flex-col items-center justify-center gap-[4.187rem] text-center text-[2.875rem] text-gray-200 font-poppins"
     style={{
       width:"100%"
     }}>
