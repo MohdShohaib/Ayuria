@@ -1,15 +1,21 @@
-const Slider = () => {
+import { Link } from "react-router-dom/dist";
+
+const Slider = ({selected}) => {
   return (
     <div
+    id="Detail"
     style={{
       width:"100%"
     }}
      className=" [background:linear-gradient(#fff,_#fff),_#fff] h-[46.313rem] flex flex-row items-center justify-start gap-[5.812rem] text-left text-[1rem] text-gray-200 font-poppins">
       <div className="self-stretch w-[42.125rem] bg-pink flex flex-row items-start justify-start">
         <img
-          className="flex-1 relative max-w-full overflow-hidden h-[46.313rem] object-cover"
+        style={{
+          padding:"10rem"
+        }}
+          className="flex-1 relative max-w-full overflow-hidden  object-cover"
           alt=""
-          src="/product-box-mockup-1@2x.png"
+          src={selected?.jivaRasaElixir1}
         />
       </div>
       <div className="w-[42.063rem] flex flex-col items-start justify-start gap-[1.312rem]">
@@ -17,11 +23,11 @@ const Slider = () => {
           <div className="relative">AYURJA</div>
         </div>
         <div className="flex flex-row items-center justify-center text-[2.875rem]">
-          <b className="relative">Jiva Rasa Elixir</b>
+          <b className="relative">{selected?.jivaRasa}</b>
         </div>
         <div className="flex flex-row items-center justify-center font-roboto">
           <div className="relative [text-decoration:underline] tracking-[0.05em]">
-            DESCRIPTION
+            {selected?.rabbitBloodHairOil}
           </div>
         </div>
         <div className="flex flex-row items-center justify-center font-belleza">
@@ -43,7 +49,7 @@ const Slider = () => {
           </div>
         </div>
         <div className="w-[13.188rem] shadow-[0px_4px_35px_rgba(0,_0,_0,_0.15)] rounded-3xs bg-gray-200 h-[3.5rem] flex flex-row items-center justify-center p-[0.625rem] box-border text-center text-white">
-          <div className="relative leading-[100%]">Buy Now</div>
+          <Link to='https://www.amazon.in/' style={{textDecoration:"none"}}  className="relative leading-[100%] text-white">Buy Now</Link>
         </div>
       </div>
     </div>

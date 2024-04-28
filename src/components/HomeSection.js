@@ -1,7 +1,12 @@
+ import { Link } from 'react-scroll';
+
 const HomeSection = () => {
   return (
-    <div className="absolute top-[1.813rem] left-[0rem] w-[100%] flex flex-row items-center justify-between py-[0rem] px-[4.375rem] box-border text-left text-[1rem] text-black font-poppins">
-      <div className="flex flex-col items-center justify-start gap-[0.6rem]">
+    <div 
+    style={{position:"fixed",
+    background: "white",
+    zIndex: "9999"}}  className=" w-[100%] flex flex-row items-center justify-between py-[0rem] px-[4.375rem] box-border text-left text-[1rem] text-black font-poppins">
+      <div  className="flex flex-col items-center justify-start gap-[0.6rem]">
         <img
           className="w-[4.569rem] relative h-[4.569rem]"
           alt=""
@@ -78,23 +83,14 @@ const HomeSection = () => {
         </div>
       </div>
       <div className="flex flex-row items-center justify-start gap-[2.5rem]">
-        {/* <div className="flex flex-row items-start justify-start gap-[3.625rem]">
-          <div className="relative">Home</div>
-          <div className="relative">About Us</div>
-          <div className="relative">Products</div>
-        </div> */}
-        <button className="btn btn-outline-black w-[9.5rem] shadow-[0px_4px_35px_rgba(0,_0,_0,_0.15)] rounded-3xs h-[2.938rem] flex flex-row items-center justify-center p-[0.625rem] box-border text-center text-white">
-          <div className="relative leading-[100%]">Home</div>
-        </button>
-        <button className="w-[9.5rem] shadow-[0px_4px_35px_rgba(0,_0,_0,_0.15)] rounded-3xs  h-[2.938rem] flex flex-row items-center justify-center p-[0.625rem] box-border text-center text-white">
-          <div className="relative leading-[100%]">About</div>
-        </button>
-        <button className="w-[9.5rem] shadow-[0px_4px_35px_rgba(0,_0,_0,_0.15)] rounded-3xs h-[2.938rem] flex flex-row items-center justify-center p-[0.625rem] box-border text-center text-white">
-          <div className="relative leading-[100%]">Products</div>
-        </button>
-        <button className="w-[9.5rem] shadow-[0px_4px_35px_rgba(0,_0,_0,_0.15)] rounded-3xs h-[2.938rem] flex flex-row items-center justify-center p-[0.625rem] box-border text-center text-white">
-          <div className="relative leading-[100%]">Contact Us</div>
-        </button>
+        <div className=" flex flex-row items-start justify-start gap-[3.625rem]">
+        <Link  to="Home" spy={true} smooth={true} className="cursor-pointer border border-yellow-500 text-decoration-none text-black hover:bg-black hover:text-white px-4 py-2 rounded">Home</Link>
+          <Link  to="About" spy={true} smooth={true} className="cursor-pointer border border-yellow-500 text-decoration-none text-black hover:bg-black hover:text-white px-4 py-2 rounded">About Us</Link>
+          <Link  to="Product" spy={true} smooth={true} className="cursor-pointer border border-yellow-500 text-decoration-none text-black hover:bg-black hover:text-white px-4 py-2 rounded">Products</Link>
+          <Link  to="ContactUs" spy={true} smooth={true} className="cursor-pointer border border-yellow-500 text-decoration-none text-black hover:bg-black hover:text-white px-4 py-2 rounded">Contact Us</Link>
+
+        </div>
+
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import FrameComponent2 from "./FrameComponent3";
 import FrameComponent4 from "./FrameComponent5";
+import Slider from "./Slider";
+import { Link } from "react-scroll";
 
-const FrameComponent1 = () => {
+const Product = () => {
   const CardArray = [
     {
       jivaRasaElixir1: "/jiva-rasa-elixir-1@2x.png",
@@ -21,15 +24,22 @@ const FrameComponent1 = () => {
       propBackgroundColor: "#FFFDCF",
     },
     {
-      jivaRasaElixir1: "/veda-rasa-elixir-1@2x.png",
+      jivaRasaElixir1: "/shikakal.png",
       jivaRasa: "Glow Dazzle",
       rabbitBloodHairOil: " Skin Radiance Powder",
       propBackgroundColor: "#FFFDCF",
     },
   ];
+   
+  const [selected, setselected] = useState("")
+  const SelectedCard = (item)=>{
+    setselected(item)
+  }
+
 
   return (
-    <div className=" bg-whitesmoke h-[85.938rem] flex flex-col items-center justify-center gap-[4.187rem] text-center text-[2.875rem] text-gray-200 font-poppins"
+    <>
+    <div id="Product" className=" bg-whitesmoke h-[85.938rem] flex flex-col items-center justify-center gap-[4.187rem] text-center text-[2.875rem] text-gray-200 font-poppins"
     style={{
       width:"100%"
     }}>
@@ -46,23 +56,28 @@ const FrameComponent1 = () => {
           style={{
             display: "flex",
             flexWrap: "wrap",
+            justifyContent:"center"
           }}
-          className=" gap-[2.5rem]"
+          className=" gap-[4.5rem]"
         >
           {CardArray.map((el) => {
-            return (
+            return (<Link to="Detail" className="cursor-pointer" onClick={()=>SelectedCard(el)}>
+              
               <FrameComponent2
                 jivaRasaElixir1={el.jivaRasaElixir1}
                 jivaRasa={el.jivaRasa}
                 rabbitBloodHairOil={el.rabbitBloodHairOil}
                 propBackgroundColor={el.propBackgroundColor}
+                SelectedCard={SelectedCard}
               />
+            </Link>
             );
           })}
         </div>
       </div>
     </div>
-  );
+   {selected && <Slider selected={selected} />}
+    </> );
 };
 
-export default FrameComponent1;
+export default Product;
