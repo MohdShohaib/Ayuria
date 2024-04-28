@@ -2,7 +2,10 @@ import FrameComponent4 from "./FrameComponent5";
 
 const FrameComponent3 = () => {
   return (
-    <div className="w-[90rem] relative bg-pink h-[48.688rem] text-left text-[2.25rem] text-gray-200 font-poppins">
+    <div className="w-[90rem] relative bg-pink h-[48.688rem] text-left text-[2.25rem] text-gray-200 font-poppins" 
+    style={{
+      width:"100%"
+    }}>
       <img
         className="absolute h-[20.83%] w-[21.94%] top-[-5.52%] right-[-0.42%] bottom-[84.69%] left-[78.47%] max-w-full overflow-hidden max-h-full"
         alt=""
@@ -16,7 +19,7 @@ const FrameComponent3 = () => {
       <div className="absolute top-[3.25rem] left-[0rem] w-[90rem] flex flex-row items-center justify-center p-[0.625rem] box-border">
         <b className="relative tracking-[0.15em] uppercase">Befits of Ayurja</b>
       </div>
-      <div className="absolute top-[10.875rem] left-[4.813rem] flex flex-row items-center justify-start gap-[9.062rem] text-[1.25rem] font-roboto">
+      <div className="absolute top-[10.875rem] left-[4.813rem] flex flex-row items-center justify-start gap-[6.062rem] text-[1.25rem] font-roboto">
         <div className="w-[32.5rem] relative rounded-3xs h-[32.5rem] bg-[url('/public/frame-166962@3x.png')] bg-cover bg-no-repeat bg-[top]">
           <img
             className="absolute top-[4.688rem] left-[11.938rem] w-[17.919rem] h-[20.625rem] object-cover"

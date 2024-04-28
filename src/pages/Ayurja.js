@@ -22,8 +22,13 @@ const Ayurja = () => {
       <FrameComponent1 />
       <Slider />
       <FrameComponent />
-      <div className="bg-oldlace flex flex-col items-start justify-start">
-        <div className="w-[90rem] h-[63.5rem] flex flex-col items-center justify-end pt-[0rem] px-[0rem] pb-[7.562rem] box-border gap-[1.875rem] bg-[url('/public/about-us@3x.png')] bg-cover bg-no-repeat bg-[top]">
+      <div style={{
+        width:"100%"
+      }} className="bg-oldlace flex flex-col items-start justify-start">
+        <div
+        style={{
+          width:"100%"
+        }} className=" h-[63.5rem] flex flex-col items-center justify-end pt-[0rem] px-[0rem] pb-[7.562rem] box-border gap-[1.875rem] bg-[url('/public/about-us@3x.png')] bg-cover bg-no-repeat bg-[top]">
           <div className="w-[89.938rem] flex flex-row items-center justify-center">
             <b className="relative tracking-[0.05em]">About Ayurja</b>
           </div>

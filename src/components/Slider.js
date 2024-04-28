@@ -1,6 +1,10 @@
 const Slider = () => {
   return (
-    <div className="w-[90rem] [background:linear-gradient(#fff,_#fff),_#fff] h-[46.313rem] flex flex-row items-center justify-start gap-[5.812rem] text-left text-[1rem] text-gray-200 font-poppins">
+    <div
+    style={{
+      width:"100%"
+    }}
+     className=" [background:linear-gradient(#fff,_#fff),_#fff] h-[46.313rem] flex flex-row items-center justify-start gap-[5.812rem] text-left text-[1rem] text-gray-200 font-poppins">
       <div className="self-stretch w-[42.125rem] bg-pink flex flex-row items-start justify-start">
         <img
           className="flex-1 relative max-w-full overflow-hidden h-[46.313rem] object-cover"

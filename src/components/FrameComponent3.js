@@ -6,17 +6,12 @@ const FrameComponent2 = ({
   rabbitBloodHairOil,
   propBackgroundColor,
 }) => {
-  const frameDivStyle = useMemo(() => {
-    return {
-      backgroundColor: propBackgroundColor,
-    };
-  }, [propBackgroundColor]);
 
   return (
     <div className="w-[24.438rem] shadow-[0px_40px_90px_rgba(0,_0,_0,_0.06)] rounded-3xs bg-white flex flex-col items-center justify-start pt-[0.625rem] px-[0rem] pb-[0.937rem] box-border gap-[1.375rem] text-left text-[1.25rem] text-gray-200 font-poppins">
       <div
         className="w-[22.875rem] relative rounded-3xs bg-pink h-[19.188rem]"
-        style={frameDivStyle}
+        style={{backgroundColor:propBackgroundColor}}
       >
         <img
           className="absolute top-[1.25rem] left-[8.531rem] w-[14.375rem] h-[16.75rem] object-cover"
