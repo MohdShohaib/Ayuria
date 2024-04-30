@@ -5,6 +5,7 @@ const FrameComponent2 = ({
   jivaRasa,
   rabbitBloodHairOil,
   propBackgroundColor,
+  index
 }) => {
 
   return (
@@ -14,7 +15,7 @@ const FrameComponent2 = ({
         style={{backgroundColor:propBackgroundColor}}
       >
         <img
-          className="absolute top-[1.25rem] left-[8.531rem] w-[14.375rem] h-[16.75rem] object-cover"
+          className={`absolute top-[1.25rem] left-${index >1 ?'[5.531rem]':'[8.531rem]'} w-[14.375rem] h-[16.75rem] object-cover`}
           alt=""
           src={jivaRasaElixir1}
         />

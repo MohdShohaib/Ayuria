@@ -3,8 +3,10 @@ import FrameComponent2 from "./FrameComponent3";
 import FrameComponent4 from "./FrameComponent5";
 import Slider from "./Slider";
 import { Link } from "react-scroll";
-
-const Product = () => {
+import { useNavigate } from "react-router-dom";
+import Glow from '../assets/Glowdazzle.png'
+const Product = ({setSelected}) => {
+  const navigat = useNavigate()
   const CardArray = [
     {
       jivaRasaElixir1: "/jiva-rasa-elixir-1@2x.png",
@@ -27,13 +29,13 @@ const Product = () => {
       jivaRasaElixir1: "/shikakal.png",
       jivaRasa: "Glow Dazzle",
       rabbitBloodHairOil: " Skin Radiance Powder",
-      propBackgroundColor: "#FFFDCF",
+      propBackgroundColor: "#D1BFAD",
     },
   ];
    
-  const [selected, setselected] = useState("")
   const SelectedCard = (item)=>{
-    setselected(item)
+    setSelected(item)
+    navigat('/Detail')
   }
 
 
@@ -41,7 +43,8 @@ const Product = () => {
     <>
     <div id="Product" className=" bg-whitesmoke h-[85.938rem] flex flex-col items-center justify-center gap-[4.187rem] text-center text-[2.875rem] text-gray-200 font-poppins"
     style={{
-      width:"100%"
+      width:"100%",
+      
     }}>
       <div className=" flex flex-col items-center justify-start gap-[1.25rem]">
         <b className="relative tracking-[0.08em] uppercase">Our PRODUCTS</b>
@@ -60,10 +63,11 @@ const Product = () => {
           }}
           className=" gap-[4.5rem]"
         >
-          {CardArray.map((el) => {
+          {CardArray.map((el,index) => {
             return (<Link to="Detail" className="cursor-pointer" onClick={()=>SelectedCard(el)}>
               
               <FrameComponent2
+              index={index}
                 jivaRasaElixir1={el.jivaRasaElixir1}
                 jivaRasa={el.jivaRasa}
                 rabbitBloodHairOil={el.rabbitBloodHairOil}
@@ -76,7 +80,7 @@ const Product = () => {
         </div>
       </div>
     </div>
-   {selected && <Slider selected={selected} />}
+   {/* {selected && <Slider selected={selected} />} */}
     </> );
 };
 

@@ -8,7 +8,7 @@ import FrameComponent7 from "../components/FrameComponent";
 import About from "../components/About";
 import Product from "../components/Product";
 
-const Ayurja = () => {
+const Ayurja = ({setSelected}) => {
   return (
     <div id="Home" className="relative bg-white w-full flex flex-col items-start justify-start text-left text-[3rem] text-gray-200 font-poppins">
       <div className="w-[100%] relative bg-white h-[52.5rem] overflow-hidden shrink-0">
@@ -21,7 +21,7 @@ const Ayurja = () => {
         <HomeSection />
       </div>
       <FrameComponent3 />
-      <Product/>
+      <Product setSelected={setSelected}/>
       {/* <Slider /> */}
       <FrameComponent />
       <About/>
