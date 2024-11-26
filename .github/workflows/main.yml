@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 35610
-     
+          script: 'cd /home/AyuriaTest/Ayuria && git pull'
