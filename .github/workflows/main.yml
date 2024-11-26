@@ -1,60 +1,22 @@
-name: CI/CD for React App with Password SSH
+name: Deploy to Ubuntu on push event
 
 on:
   push:
     branches:
-      - main # Trigger workflow on pushes to the 'main' branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
+      - name: Checkout the repository
         uses: actions/checkout@v3
-
-      # Step 2: Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16 # Adjust Node.js version if needed
-
-      # Step 3: Install dependencies and build the app
-      - name: Install Dependencies and Build
-        run: |
-          npm install
-          npm run build
-
-      # Step 4: Deploy to Ubuntu Server via SSH with password
-      - name: Deploy to Ubuntu Server
-        uses: appleboy/ssh-action@v0.1.5
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          script: |
-            # Ensure deployment directory exists
-            if [ ! -d "${{ secrets.DEPLOY_PATH }}" ]; then
-              mkdir -p ${{ secrets.DEPLOY_PATH }}
-            fi
-            
-            # Navigate to deployment directory
-            cd ${{ secrets.DEPLOY_PATH }}
-
-            # Remove old build
-            rm -rf build
-            
-            # Copy new build to the server
-            scp -r ./build ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/build
-
-            # Restart the application using PM2
-            pm2 delete react-app || true # Ignore errors if app doesn't exist
-            pm2 start npm --name "react-app" -- start
-            pm2 save
-
-      # Optional: Notify about deployment
-      - name: Notify Success
-        if: success()
-        run: echo "Deployment completed successfully!"
+          port: 35610
+          script: 'cd /home/AyuriaTest/Ayuria && git pull'
