@@ -33,28 +33,28 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          script: |
-            # Ensure deployment directory exists
-            if [ ! -d "${{ secrets.DEPLOY_PATH }}" ]; then
-              mkdir -p ${{ secrets.DEPLOY_PATH }}
-            fi
+          port: 22
+      #     script: |
+      #       # Ensure deployment directory exists
+      #       if [ ! -d "${{ secrets.DEPLOY_PATH }}" ]; then
+      #         mkdir -p ${{ secrets.DEPLOY_PATH }}
+      #       fi
             
-            # Navigate to deployment directory
-            cd ${{ secrets.DEPLOY_PATH }}
+      #       # Navigate to deployment directory
+      #       cd ${{ secrets.DEPLOY_PATH }}
 
-            # Remove old build
-            rm -rf build
+      #       # Remove old build
+      #       rm -rf build
             
-            # Copy new build to the server
-            scp -r ./build ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/build
+      #       # Copy new build to the server
+      #       scp -r ./build ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/build
 
-            # Restart the application using PM2
-            pm2 delete react-app || true # Ignore errors if app doesn't exist
-            pm2 start npm --name "react-app" -- start
-            pm2 save
+      #       # Restart the application using PM2
+      #       pm2 delete react-app || true # Ignore errors if app doesn't exist
+      #       pm2 start npm --name "react-app" -- start
+      #       pm2 save
 
-      # Optional: Notify about deployment
-      - name: Notify Success
-        if: success()
-        run: echo "Deployment completed successfully!"
+      # # Optional: Notify about deployment
+      # - name: Notify Success
+      #   if: success()
+      #   run: echo "Deployment completed successfully!"
