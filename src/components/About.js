@@ -10,7 +10,7 @@ const About = () => {
           width:"100%"
         }} className=" h-[63.5rem] flex flex-col items-center justify-end pt-[0rem] px-[0rem] pb-[7.562rem] box-border gap-[1.875rem] bg-[url('/public/about-us@3x.png')] bg-cover bg-no-repeat bg-[top]">
           <div className="w-[89.938rem] flex flex-row items-center justify-center">
-            <b className="relative tracking-[0.05em]">About Ayurja</b>
+            <b className="relative tracking-[0.05em]">About ali bro Ayurja</b>
           </div>
           <div className="flex flex-col items-end justify-start gap-[2.937rem] text-center text-[1.25rem] font-roboto">
             <div className="w-[58.625rem] relative leading-[2.125rem] inline-block font-poppins">
